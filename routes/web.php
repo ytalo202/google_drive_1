@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,20 @@ Route::middleware('auth')->group(function (){
     Route::get('/api/v', 'GoogleDriveController@isEmpty');
     Route::get('/api/upload', 'GoogleDriveController@uploadFiles');
     Route::post('/api/upload', 'GoogleDriveController@uploadFiles');
+
+    Route::get('/client', 'GoogleDriveController@client');
+    Route::post('/upload', function (Request $request) {
+        $file_id = $request->input('file_id');
+        session(['file_id' => $file_id]);
+//    dd($request->all());
+//        dd($request->file('thing'));
+
+//        //va a GoogleDriverServiceProvider
+////    dd($request->file('thing'));
+        dd($request->file('thing')->store("","google"));
+        return redirect('/api');
+    });
+
 });
 
 

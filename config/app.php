@@ -1,5 +1,7 @@
 <?php
 
+use App\Providers\GoogleDriverServiceProvider;
+
 return [
 
     /*
@@ -175,6 +177,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\GoogleClientProvider::class,
+        App\Providers\GoogleDriverServiceProvider::class,
 
     ],
 

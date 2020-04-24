@@ -65,6 +65,12 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
+        'google' => [
+            'driver' =>'google',
+            'clientId' =>env('GOOGLE_CLIENT_ID'),
+            'clientSecret' =>env('GOOGLE_CLIENT_SECRET'),
+        ]
+
     ],
 
     /*
